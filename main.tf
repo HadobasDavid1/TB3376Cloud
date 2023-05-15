@@ -22,5 +22,3 @@ output "answers" {
   value = {
     "lifecycle_phase"        = module.write.answers.answer_1
     "invalid_attribute_type" = module.write.answers.answer_2
-      }
-      }
