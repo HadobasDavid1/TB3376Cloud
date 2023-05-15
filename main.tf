@@ -6,19 +6,32 @@ module "files" {
 
 module "read" {
   source = "./modules/read"
-  file_name = module.files.file_name
+  file_content = module.files.content
 }
 
 module "write" {
   source = "./modules/write"
-  answer_1 = module.read.read_file_content
-  answer_2 = "tuple"
+  answer_1 = "string"
+  answer_2 = "object"
   answer_3 = "while"
   answer_4 = "using meta-argument"
-  answer_5 = var.answers_file.answer_5
+  answer_5 = "using -var flag"
+  answers_file_path = "./modules/write/answers.tfvars"
 }
 
-output "answers" {
-  value = {
-    "lifecycle_phase"        = module.write.answers.answer_1
-    "invalid_attribute_type" = module.write.answers.answer_2
+module "data" {
+  source = "./modules/data"
+  file_path = module.files.file_path
+}
+
+output "read_file_content" {
+  value = module.read.file_content
+}
+
+output "write_answers" {
+  value = module.write.answers
+}
+
+output "file_id" {
+  value = module.data.file_id
+}
