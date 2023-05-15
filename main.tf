@@ -11,12 +11,12 @@ module "read" {
 
 module "write" {
   source = "./modules/write"
-  answer_1 = "string"
-  answer_2 = "object"
-  answer_3 = "while"
-  answer_4 = "using meta-argument"
-  answer_5 = "using -var flag"
-  answers_file_path = "./modules/write/answers.tfvars"
+
+  answer_1 = file("${path.module}/write/answers.tfvars").answer_1
+  answer_2 = file("${path.module}/write/answers.tfvars").answer_2
+  answer_3 = file("${path.module}/write/answers.tfvars").answer_3
+  answer_4 = file("${path.module}/write/answers.tfvars").answer_4
+  answer_5 = file("${path.module}/write/answers.tfvars").answer_5
 }
 
 module "data" {
