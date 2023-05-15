@@ -1,4 +1,4 @@
-output "answers" {
+output "answerlist" {
   value = {
     answer_1 = var.answer_1
     answer_2 = var.answer_2
