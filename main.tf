@@ -11,7 +11,7 @@ module "read" {
 
 module "write" {
   source    = "./modules/write"
-  variables = read("modules/write/answers.tfvars")
+  variables = file("modules/write/answers.tfvars")
 }
 
 locals {
