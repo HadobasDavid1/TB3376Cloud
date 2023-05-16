@@ -10,7 +10,7 @@ module "read" {
 }
 
 locals {
-  answers = jsondecode(file("${path.module}/modules/write/answers.tfvars"))
+  answers = jsondecode(file("./modules/write/answers.tfvars"))
 }
 
 module "write" {
