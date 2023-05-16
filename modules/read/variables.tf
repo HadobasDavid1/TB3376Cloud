@@ -1,3 +1,4 @@
-variable "file_name" {
-  description = "The name of the file to read"
+variable "read_variable" {
+  type        = string
+  description = "Description of the variable in the 'read' module"
 }
