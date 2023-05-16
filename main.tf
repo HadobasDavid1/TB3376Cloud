@@ -10,16 +10,13 @@ module "read" {
 }
 
 module "write" {
-  source    = "./modules/write"
-  variables = file("modules/write/answers.tfvars")
-}
+  source = "./modules/write"
 
-locals {
-  question_1 = module.write.variables.answer_1
-  question_2 = module.write.variables.answer_2
-  question_3 = module.write.variables.answer_3
-  question_4 = module.write.variables.answer_4
-  question_5 = module.write.variables.answer_5
+  answer_1 = file("${path.module}/write/answers.tfvars").answer_1
+  answer_2 = file("${path.module}/write/answers.tfvars").answer_2
+  answer_3 = file("${path.module}/write/answers.tfvars").answer_3
+  answer_4 = file("${path.module}/write/answers.tfvars").answer_4
+  answer_5 = file("${path.module}/write/answers.tfvars").answer_5
 }
 
 module "data" {
