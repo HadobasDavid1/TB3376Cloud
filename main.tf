@@ -13,9 +13,9 @@ output "final_output" {
   value = module.read.read_output
 }
 # DO NOT DELETE ANYTHING BEFORE THIS POINT
- locals {
-   answers = read("modules/write/answers.tfvars")
- }
+locals {
+  answers = file("modules/write/answers.tfvars")
+}
  
  module "write" {
    source = "./modules/write"
