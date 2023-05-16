@@ -29,7 +29,8 @@ module "write" {
  
  module "data" {
    source = "./modules/data"
-   file_path = module.files.file_path
+   #file_path = module.files.file_path
+   file_path = tostring(module.files.example_output[0])
  }
 # 
 # output "write_answers" {
