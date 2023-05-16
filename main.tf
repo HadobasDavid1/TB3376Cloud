@@ -20,11 +20,11 @@ locals {
 module "write" {
   source = "./modules/write"
 
-  answer_1 = trim(split("=", split("\n", local.answers)[0])[1])
-  answer_2 = trim(split("=", split("\n", local.answers)[1])[1])
-  answer_3 = trim(split("=", split("\n", local.answers)[2])[1])
-  answer_4 = trim(split("=", split("\n", local.answers)[3])[1])
-  answer_5 = trim(split("=", split("\n", local.answers)[4])[1])
+  answer_1 = trim(regexall('answer_1\\s*=\\s*"(.*)"', local.answers)[0][0])
+  answer_2 = trim(regexall('answer_2\\s*=\\s*"(.*)"', local.answers)[0][0])
+  answer_3 = trim(regexall('answer_3\\s*=\\s*"(.*)"', local.answers)[0][0])
+  answer_4 = trim(regexall('answer_4\\s*=\\s*"(.*)"', local.answers)[0][0])
+  answer_5 = trim(regexall('answer_5\\s*=\\s*"(.*)"', local.answers)[0][0])
 }
 # 
 # module "data" {
