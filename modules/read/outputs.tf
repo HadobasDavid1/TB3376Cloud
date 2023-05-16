@@ -1,3 +1,3 @@
-output "read_file_content" {
-  value = "read-${module.files.file_content}"
+output "read_output" {
+  value = "read-${module.files.example_output}"
 }
