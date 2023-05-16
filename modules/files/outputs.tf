@@ -5,3 +5,7 @@ output "file_content_md5" {
 output "custom" {
   value = "something"
 }
+
+output "example_output" {
+  value = local_file.file[*].file_name
+}
