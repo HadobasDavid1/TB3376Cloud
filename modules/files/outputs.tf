@@ -7,5 +7,5 @@ output "custom" {
 }
 
 output "example_output" {
-  value = local_file.file[*].file_name
+  value = local_file.file[*].filename
 }
