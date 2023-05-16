@@ -1,4 +1,4 @@
 variable "variables" {
   description = "Map of variables read from answers.tfvars"
-  type        = map(any)
+  type        = map(string)
 }
