@@ -5,8 +5,12 @@ module "files" {
 }
 
 module "read" {
-  source          = "./modules/read"
-  read_variable   = module.files.example_output
+  source        = "./modules/read"
+  read_variable = module.files.example_output
+}
+
+output "final_output" {
+  value = module.read.read_output
 }
 # locals {
 #   answers = read("modules/write/answers.tfvars")
