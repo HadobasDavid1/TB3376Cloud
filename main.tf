@@ -5,8 +5,8 @@ module "files" {
 }
 
 module "read" {
-  source = "./modules/read"
-  file_name = module.files.file_name
+  source          = "./modules/read"
+  read_variable   = module.files.example_output
 }
 
 module "write" {
