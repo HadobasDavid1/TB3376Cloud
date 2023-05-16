@@ -9,14 +9,18 @@ module "read" {
   read_variable   = module.files.example_output
 }
 
+locals {
+  answers = jsondecode(file("${path.module}/modules/write/answers.tfvars"))
+}
+
 module "write" {
   source = "./modules/write"
 
-  answer_1 = file("./modules/write/answers.tfvars").answer_1
-  answer_2 = file("./modules/write/answers.tfvars").answer_2
-  answer_3 = file("./modules/write/answers.tfvars").answer_3
-  answer_4 = file("./modules/write/answers.tfvars").answer_4
-  answer_5 = file("./modules/write/answers.tfvars").answer_5
+  answer_1 = local.answers.answer_1
+  answer_2 = local.answers.answer_2
+  answer_3 = local.answers.answer_3
+  answer_4 = local.answers.answer_4
+  answer_5 = local.answers.answer_5
 }
 
 module "data" {
