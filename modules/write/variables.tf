@@ -1,5 +1,4 @@
-variable "answer_1" {}
-variable "answer_2" {}
-variable "answer_3" {}
-variable "answer_4" {}
-variable "answer_5" {}
+variable "variables" {
+  description = "Map of variables read from answers.tfvars"
+  type        = map(any)
+}
