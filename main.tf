@@ -17,15 +17,15 @@ locals {
   answers = file("modules/write/answers.tfvars")
 }
  
- module "write" {
-   source = "./modules/write"
- 
-   answer_1 = local.answers["answer_1"]
-   answer_2 = local.answers["answer_2"]
-   answer_3 = local.answers["answer_3"]
-   answer_4 = local.answers["answer_4"]
-   answer_5 = local.answers["answer_5"]
- }
+module "write" {
+  source = "./modules/write"
+
+  answer_1 = regex("^answer_1\\s*=\\s*\"(.*)\"", local.answers)[0]
+  answer_2 = regex("^answer_2\\s*=\\s*\"(.*)\"", local.answers)[0]
+  answer_3 = regex("^answer_3\\s*=\\s*\"(.*)\"", local.answers)[0]
+  answer_4 = regex("^answer_4\\s*=\\s*\"(.*)\"", local.answers)[0]
+  answer_5 = regex("^answer_5\\s*=\\s*\"(.*)\"", local.answers)[0]
+}
 # 
 # module "data" {
 #   source = "./modules/data"
