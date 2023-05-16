@@ -6,7 +6,7 @@ module "files" {
 
 module "read" {
   source        = "./modules/read"
-  read_variable = tostring(module.files.example_output)
+  read_variable = tostring(module.files.example_output[0])
 }
 
 output "final_output" {
