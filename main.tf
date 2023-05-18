@@ -33,9 +33,9 @@ module "write" {
 #   file_path = tostring(module.files.example_output[0])
 # }
 # 
-# output "write_answers" {
-#   value = module.write.answers
-# }
+ output "write_answers" {
+   value = module.write.answers
+ }
 # 
 # output "file_id" {
 #   value = module.data.file_id
