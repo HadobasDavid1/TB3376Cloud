@@ -27,11 +27,11 @@ module "write" {
   answer_5 = trim(split("=", split("\n", local.answers)[4])[1], "\"\n")
 }
  
- module "data" {
-   source = "./modules/data"
+# module "data" {
+#   source = "./modules/data"
    #file_path = module.files.file_path
-   file_path = tostring(module.files.example_output[0])
- }
+#   file_path = tostring(module.files.example_output[0])
+# }
 # 
 # output "write_answers" {
 #   value = module.write.answers
