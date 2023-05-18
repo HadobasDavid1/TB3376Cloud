@@ -30,6 +30,7 @@ module "write" {
 module "data" {
    source = "./modules/data"
    file_path = module.files.example_output[0]
+   depends_on = [module.files]
 }
  
  output "write_answers" {
